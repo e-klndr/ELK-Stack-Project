@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook yml and config file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the __playbook yml and config__ file may be used to install only certain pieces of it, such as Filebeat.
 
   - TODO: Enter the playbook file.
 
@@ -24,12 +24,14 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly __redundant, in addition to restricting traffic__ to the network.
-- TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?
+- What aspect of security do load balancers protect? What is the advantage of a jump box?
+__Load balancers play a role to maintain "availability" of the information. In case of a technical failure or system attacks from outside sources, load balancers reroute the traffic in between servers.  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __ and system __.
-- TODO: What does Filebeat watch for?
-Filebeat is a tool that monitors log files and 
-- TODO: What does Metricbeat record?
+- What does Filebeat watch for?
+__Filebeat is a tool that monitors log files and locations and collects the data then forwards to place wherever it's specified. Having tool like filebeat makes certain tasks easier. For example, in an extensive corporate environment, we can gather all the log information instead of going them in one by one.
+- What does Metricbeat record?
+__Metricbeat is a tool that gives us information such as the system performance and usage of CPU, Memory, RAM in a GUI format. 
 
 The configuration details of each machine may be found below.
 Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
