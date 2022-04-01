@@ -26,14 +26,15 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly __redundant, in addition to restricting traffic__ to the network.
 - What aspect of security do load balancers protect? What is the advantage of a jump box?
 
-__Load balancers play a role to maintain "availability" of the information. In case of a technical failure or system attacks from outside sources, load balancers reroute the traffic in between servers.  
+__Load balancers play a role to maintain "availability" of the information. In case of a technical failure or system attacks from outside sources, load balancers reroute the traffic in between servers.__  
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __ and system __.
 - What does Filebeat watch for?
 
-__Filebeat is a tool that monitors log files and locations and collects the data then forwards to place wherever it's specified. Having tool like filebeat makes certain tasks easier. For example, in an extensive corporate environment, we can gather all the log information instead of going them in one by one.
+__Filebeat is a tool that monitors log files and locations and collects the data then forwards to place wherever it's specified. Having tool like filebeat makes certain tasks easier. For example, in an extensive corporate environment, we can gather all the log information instead of going them in one by one.__
 - What does Metricbeat record?
-__Metricbeat is a tool that gives us information such as the system performance and usage of CPU, Memory, RAM in a GUI format. 
+- 
+__Metricbeat is a tool that gives us information such as the system performance and usage of CPU, Memory, RAM in a GUI format.__
 
 The configuration details of each machine may be found below.
 Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
