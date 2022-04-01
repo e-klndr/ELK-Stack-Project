@@ -26,6 +26,7 @@ Load balancing ensures that the application will be highly __redundant, in addit
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __ and system __.
 - TODO: What does Filebeat watch for?
+Filebeat is a tool that monitors log files and 
 - TODO: What does Metricbeat record?
 
 The configuration details of each machine may be found below.
