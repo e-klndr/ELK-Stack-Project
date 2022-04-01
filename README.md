@@ -28,12 +28,11 @@ Load balancing ensures that the application will be highly __redundant, in addit
 
 __Load balancers play a role to maintain "availability" of the information. In case of a technical failure or system attacks from outside sources, load balancers reroute the traffic in between servers.__  
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __ and system __.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __network and system logs __.
 - What does Filebeat watch for?
 
 __Filebeat is a tool that monitors log files and locations and collects the data then forwards to place wherever it's specified. Having tool like filebeat makes certain tasks easier. For example, in an extensive corporate environment, we can gather all the log information instead of going them in one by one.__
 - What does Metricbeat record?
-- 
 __Metricbeat is a tool that gives us information such as the system performance and usage of CPU, Memory, RAM in a GUI format.__
 
 The configuration details of each machine may be found below.
@@ -50,11 +49,13 @@ Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the ___ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- TODO: Add whitelisted IP addresses
+Only the ___Jumpbox__ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- Add whitelisted IP addresses
+- __my public IP__
 
-Machines within the network can only be accessed by ___.
-- TODO: Which machine did you allow to access your ELK VM? What was its IP address?
+Machines within the network can only be accessed by ___from my workstation through Jump-Box via SSH to the virtual network__.
+-  Which machine did you allow to access your ELK VM? What was its IP address?
+-  __Jump-Box provisioner via SSH over port #22. Jump-Box has my public IP while ELK-VM has 10.1.0.5__ 
 
 A summary of the access policies in place can be found in the table below.
 
@@ -67,10 +68,10 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- TODO: What is the main advantage of automating configuration with Ansible?
-
+- What is the main advantage of automating configuration with Ansible?
+__Ansible allows users to manage, configure, update or run tasks on multiple servers from a single point rather than go into each servers and re-do every single tasks. This way a possible human error can be eliminated and a big saving time can be accomplished.__
 The playbook implements the following tasks:
-- TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
+- In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
 - ...
 - ...
 
