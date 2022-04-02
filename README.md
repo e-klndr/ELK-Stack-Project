@@ -54,11 +54,11 @@ The machines on the internal network are not exposed to the public Internet.
 
 Only the __Jumpbox__ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - Add whitelisted IP addresses
- __my public IP__
+- __my public IP__
 
 Machines within the network can only be accessed by __from my workstation through Jump-Box via SSH to the virtual network__.
 -  Which machine did you allow to access your ELK VM? What was its IP address?
- __Jump-Box provisioner via SSH over port #22. Jump-Box has my public IP while ELK-VM has 10.1.0.5__ 
+- __Jump-Box provisioner via SSH over port #22. Jump-Box has my public IP while ELK-VM has 10.1.0.5__ 
 
 A summary of the access policies in place can be found in the table below.
 
