@@ -76,13 +76,13 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 __Ansible allows users to manage, configure, update or run tasks on multiple servers from a single point rather than go into each servers and re-do every single tasks. This way a possible human error can be eliminated as well as a big time save can be accomplished.__
 The playbook implements the following tasks:
 - In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
--**Define the name and servers** 
+
+-Define the name and servers
 ---
 - name: Config Web VM with Docker
   hosts: elk
   become: true
   tasks:
-    #Use apt module
   - name: docker.io
     apt:
       force_apt_get: yes
@@ -96,7 +96,6 @@ The playbook implements the following tasks:
        name: python3-pip
        state: present
 
-    #Use pip module
    - name: Install Docker python module
      pip:
        name: docker
@@ -105,7 +104,6 @@ The playbook implements the following tasks:
    - name: Increase virtual memory
      command: sysctl -w vm.max_map_count=262144
 
-    # Use sysctl module
    - name: Use more memory
      ansible.posix.sysctl:
        name: vm.max_map_count
@@ -113,7 +111,6 @@ The playbook implements the following tasks:
        state: present
        reload: yes
 
-    # Use docker_container module
    - name: download and launch a docker elk container
      docker_container:
        name: elk
@@ -121,13 +118,11 @@ The playbook implements the following tasks:
        state: started
        restart_policy: always
 
-    # Please list the ports that ELK runs on
       published_ports:
-       -  5601:5601
-       -  9200:9200
-       -  5044:5044
-
-    # Use systemd module
+       -5601:5601
+       -9200:9200
+       -5044:5044
+       
    - name: Enable service docker on boot
      systemd:
        name: docker
