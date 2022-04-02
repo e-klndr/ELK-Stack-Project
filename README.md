@@ -38,13 +38,13 @@ __Metricbeat is a tool that gives us information such as the system performance 
 The configuration details of each machine may be found below.
 Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
 
-| Name     | Function    | IP Address | Operating System |
-|----------|----------   |------------|------------------|
-| Jump Box | Gateway     | 10.0.0.1   | Linux            |
-| Web-1    |             |            |                  |
-| Web-2    |             |            |                  |
-| Web-3    |             |            |                  |
-| ELK      |             |            |                  |
+| Name     | Function         | IP Address | Operating System |
+|----------|------------------|------------|------------------|
+| Jump Box | Gateway          | 10.0.0.4   | Linux            |
+| Web-1    | Virtual Machine  | 10.0.0.9   | Linux            |
+| Web-2    | Virtual Machine  | 10.0.0.10  | Linux            |
+| Web-3    | Virtual Machine  | 10.0.0.8   | Linux            |
+| ELK      | Virtual Machine  | 10.1.0.5   | Linux            |
 
 
 ### Access Policies
@@ -61,11 +61,13 @@ Machines within the network can only be accessed by __from my workstation throug
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name      | Publicly Accessible | Allowed IP Addresses |
+|-----------|---------------------|----------------------|
+| Jump Box  | Yes                 | Workstation publicIP |
+| Web-1     | No                  | 10.0.0.4/JumpBox     |
+| Web-2     | No                  | 10.0.0.4/JumpBox     |
+| Web-3     | No                  | 10.0.0.4/JumpBox     |
+| ELK-Server| No                  | Workstation publicIP |
 
 ### Elk Configuration
 
