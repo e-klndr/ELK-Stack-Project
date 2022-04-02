@@ -77,40 +77,39 @@ __Ansible allows users to manage, configure, update or run tasks on multiple ser
 The playbook implements the following tasks:
 - In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
 ---
-- name: Config Web VM with Docker
+  name: Config Web VM with Docker
   hosts: elk
   become: true
   tasks:
-
-  - name: docker.io
+   name: docker.io
     apt:
-      force_apt_get: yes
-      update_cache: yes
-      name: docker.io
-      state: present
+    force_apt_get: yes
+    update_cache: yes
+    name: docker.io
+    state: present
 
-  - name: Install pip3
+    name: Install pip3
     apt:
       force_apt_get: yes
       name: python3-pip
       state: present
 
-  - name: Install Docker python module
+    name: Install Docker python module
     pip:
       name: docker
       state: present
 
-  - name: Increase virtual memory
+    name: Increase virtual memory
     command: sysctl -w vm.max_map_count=262144
 
-  - name: Use more memory
+    name: Use more memory
     ansible.posix.sysctl:
       name: vm.max_map_count
       value: 262144
       state: present
       reload: yes
 
-  - name: download and launch a docker elk container
+    name: download and launch a docker elk container
     docker_container:
       name: elk
       image: sebp/elk:761
@@ -118,11 +117,11 @@ The playbook implements the following tasks:
       restart_policy: always
 
       published_ports:
-       -  5601:5601
-       -  9200:9200
-       -  5044:5044
+       -5601:5601
+       -9200:9200
+       -5044:5044
        
-  - name: Enable service docker on boot
+    name: Enable service docker on boot
     systemd:
       name: docker
       enabled: yes
@@ -136,10 +135,18 @@ The following screenshot displays the result of running `docker ps` after succes
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- TODO: List the IP addresses of the machines you are monitoring
+- List the IP addresses of the machines you are monitoring
+__ELK Server: 10.1.0.5__
+__Web-1 : 10.0.0.9__
+__Web-2 : 10.0.0.10__
+__Web-3 : 10.0.0.8__
 
 We have installed the following Beats on these machines:
-- TODO: Specify which Beats you successfully installed
+- Specify which Beats you successfully installed
+__Filebeat__
+![image](https://user-images.githubusercontent.com/95233170/161363674-0fa53e19-8d2a-45e9-ad0c-d4a0cfb05c04.png)
+__Metricbeat__
+![image](https://user-images.githubusercontent.com/95233170/161363679-1715b077-872d-4f50-bf30-978f968671d8.png)
 
 These Beats allow us to collect the following information from each machine:
 - TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
@@ -156,6 +163,6 @@ TODO: Answer the following questions to fill in the blanks:
 - Which file is the playbook? Where do you copy it?
 - Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 - _Which URL do you navigate to in order to check that the ELK server is running?
-- __http://"elk-serverIP":5601/app/kibana__
+ __http://"elk-serverIP":5601/app/kibana__
 
 As a *Bonus*, provide the specific commands the user will need to run to download the playbook, update the files, etc.
