@@ -28,7 +28,7 @@ Load balancing ensures that the application will be highly __redundant, in addit
 
 __Load balancers play a role to maintain "availability" of the information. In case of a technical failure or system attacks from outside sources, load balancers reroute the traffic in between servers.__  
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __network and system logs. __
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the __network and system logs.__
 - What does Filebeat watch for?
 
 __Filebeat is a tool that monitors log files and locations and collects the data then forwards to place wherever it's specified. Having tool like filebeat makes certain tasks easier. For example, in an extensive corporate environment, we can gather all the log information instead of going them in one by one.__
@@ -77,7 +77,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
+![image](https://user-images.githubusercontent.com/95233170/161361048-bf935559-332d-457a-a796-3b3bef1d24ec.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
