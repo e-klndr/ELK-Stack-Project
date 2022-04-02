@@ -77,12 +77,13 @@ __Ansible allows users to manage, configure, update or run tasks on multiple ser
 The playbook implements the following tasks:
 - In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc.
 
--Define the name and servers
+  Define the name and servers
 ---
 - name: Config Web VM with Docker
   hosts: elk
   become: true
   tasks:
+  
   - name: docker.io
     apt:
       force_apt_get: yes
