@@ -79,10 +79,10 @@ The playbook implements the following tasks:
 
   Define the name and servers
 ---
-- name: Config Web VM with Docker
-  hosts: elk
-  become: true
-  tasks:
+-- name: Config Web VM with Docker
+   hosts: elk
+   become: true
+   tasks:
   
   - name: docker.io
     apt:
