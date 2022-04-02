@@ -38,22 +38,24 @@ __Metricbeat is a tool that gives us information such as the system performance 
 The configuration details of each machine may be found below.
 Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name     | Function    | IP Address | Operating System |
+|----------|----------   |------------|------------------|
+| Jump Box | Gateway     | 10.0.0.1   | Linux            |
+| Web-1    |             |            |                  |
+| Web-2    |             |            |                  |
+| Web-3    |             |            |                  |
+| ELK      |             |            |                  |
+
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the ___Jumpbox__ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the __Jumpbox__ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 - Add whitelisted IP addresses
 - __my public IP__
 
-Machines within the network can only be accessed by ___from my workstation through Jump-Box via SSH to the virtual network__.
+Machines within the network can only be accessed by __from my workstation through Jump-Box via SSH to the virtual network__.
 -  Which machine did you allow to access your ELK VM? What was its IP address?
 -  __Jump-Box provisioner via SSH over port #22. Jump-Box has my public IP while ELK-VM has 10.1.0.5__ 
 
