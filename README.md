@@ -96,27 +96,6 @@ The playbook implements the following tasks:
       name: docker.io
       state: present
 
-    name: Install pip3
-    apt:
-      force_apt_get: yes
-      name: python3-pip
-      state: present
-
-    name: Install Docker python module
-    pip:
-      name: docker
-      state: present
-
-    name: Increase virtual memory
-    command: sysctl -w vm.max_map_count=262144
-
-    name: Use more memory
-    ansible.posix.sysctl:
-      name: vm.max_map_count
-      value: 262144
-      state: present
-      reload: yes
-
     name: download and launch a docker elk container
     docker_container:
       name: elk
@@ -133,9 +112,16 @@ The playbook implements the following tasks:
     systemd:
       name: docker
       enabled: yes
-
-
-
+      
+ - __In the example above, there is a section of a used yaml file in order to deploy ELK container in the Elk Server__
+ - __First, it starts with name of the yaml.__
+ - __Then hosts identifies where the yaml file will be deployed into.__
+ - __become: true value shows a sort of execution of the tasks.__
+ - __then under 'tasks' section all the commands can be scripted as blocks.__
+ - __First block is to upload docker.io by using apt command. 'State: present' means is to install, unlike 'absent' to uninstall.__
+ - __Second block is specifying download and launching Elk container, restart policy always means the container will be up and running whenever the Elk server is running.__
+ - __Following blocks are to specify over which ports to establish access.__
+ - __Last blcok is to enable docker service as the server powered on.__
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -145,20 +131,17 @@ The following screenshot displays the result of running `docker ps` after succes
 This ELK server is configured to monitor the following machines:
 - List the IP addresses of the machines you are monitoring
 
-__ELK Server: 10.1.0.5__
-
-__Web-1 : 10.0.0.9__
-
-__Web-2 : 10.0.0.10__
-
-__Web-3 : 10.0.0.8__
+- __ELK Server: 10.1.0.5__
+- __Web-1 : 10.0.0.9__
+- __Web-2 : 10.0.0.10__
+- __Web-3 : 10.0.0.8__
 
 We have installed the following Beats on these machines:
 - Specify which Beats you successfully installed
  
 __Filebeat__
 
-![image](https://user-images.githubusercontent.com/95233170/161363674-0fa53e19-8d2a-45e9-ad0c-d4a0cfb05c04.png)
+![image](https://user-images.githubusercontent.com/95233170/161408907-2050f4a3-ebaf-4f0d-b297-8f2f1b963d71.png)
 
 __Metricbeat__
 
@@ -178,6 +161,9 @@ SSH into the control node and follow the steps below:
 TODO: Answer the following questions to fill in the blanks:
 - Which file is the playbook? Where do you copy it?
 - Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
+
+__
+
 - Which URL do you navigate to in order to check that the ELK server is running?
 
  __http://"elk-serverIP":5601/app/kibana__
