@@ -131,10 +131,10 @@ The following screenshot displays the result of running `docker ps` after succes
 This ELK server is configured to monitor the following machines:
 - List the IP addresses of the machines you are monitoring
 
-__ELK Server: 10.1.0.5__
-__Web-1 : 10.0.0.9__
-__Web-2 : 10.0.0.10__
-__Web-3 : 10.0.0.8__
+- __ELK Server: 10.1.0.5__
+- __Web-1 : 10.0.0.9__
+- __Web-2 : 10.0.0.10__
+- __Web-3 : 10.0.0.8__
 
 We have installed the following Beats on these machines:
 - Specify which Beats you successfully installed
