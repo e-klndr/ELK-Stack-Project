@@ -158,7 +158,7 @@ We have installed the following Beats on these machines:
  
 __Filebeat__
 
-![image](https://user-images.githubusercontent.com/95233170/161363674-0fa53e19-8d2a-45e9-ad0c-d4a0cfb05c04.png)
+![image](https://user-images.githubusercontent.com/95233170/161408907-2050f4a3-ebaf-4f0d-b297-8f2f1b963d71.png)
 
 __Metricbeat__
 
