@@ -113,15 +113,15 @@ The playbook implements the following tasks:
       name: docker
       enabled: yes
       
- -__In the example above, there is a section of a used yaml file in order to deploy ELK container in the Elk Server__
- -__First, it starts with name of the yaml.__
- -__Then hosts identifies where the yaml file will be deployed into.__
- -__become: true value shows a sort of execution of the tasks.__
- -__then under 'tasks' section all the commands can be scripted as blocks.__
- -__First block is to upload docker.io by using apt command. 'State: present' means is to install, unlike 'absent' to uninstall.__
- -__Second block is specifying download and launching Elk container, restart policy always means the container will be up and running whenever the Elk server is running.__
- -__Following blocks are to specify over which ports to establish access.__
- -__Last blcok is to enable docker service as the server powered on.__
+ - __In the example above, there is a section of a used yaml file in order to deploy ELK container in the Elk Server__
+ - __First, it starts with name of the yaml.__
+ - __Then hosts identifies where the yaml file will be deployed into.__
+ - __become: true value shows a sort of execution of the tasks.__
+ - __then under 'tasks' section all the commands can be scripted as blocks.__
+ - __First block is to upload docker.io by using apt command. 'State: present' means is to install, unlike 'absent' to uninstall.__
+ - __Second block is specifying download and launching Elk container, restart policy always means the container will be up and running whenever the Elk server is running.__
+ - __Following blocks are to specify over which ports to establish access.__
+ - __Last blcok is to enable docker service as the server powered on.__
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
