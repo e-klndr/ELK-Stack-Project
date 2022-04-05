@@ -8,8 +8,14 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the __playbook yml and config__ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - TODO: Enter the playbook file.
+- Enter the playbook file.
+- [My First Playbook](https://github.com/e-klndr/ELK-Stack-Project/blob/main/Ansible/Docker/klndr_playbook.yml)
+- [Install ELK](https://github.com/e-klndr/ELK-Stack-Project/blob/main/Ansible/Elk/install-elk.yml)
+- [Pentest Playbook](https://github.com/e-klndr/ELK-Stack-Project/blob/main/Ansible/Docker/pentest.yml)
 - [Filebeat Playbook](https://github.com/e-klndr/ELK-Stack-Project/blob/main/Ansible/Filebeat/filebeat.yml)
+- [Filebeat Config](https://github.com/e-klndr/ELK-Stack-Project/blob/main/Ansible/Filebeat/filebeat_config.yml)
+- [Metricbeat Playbook](https://github.com/e-klndr/ELK-Stack-Project/blob/main/Ansible/Metricbeat/metricbeat.yml)
+- [Metricbeat Config](https://github.com/e-klndr/ELK-Stack-Project/blob/main/Ansible/Metricbeat/metricbeat_config.yml)
 
 This document contains the following details:
 
@@ -41,13 +47,13 @@ __Metricbeat is a tool that gives us information such as the system performance 
 The configuration details of each machine may be found below.
 Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
 
-| Name     | Function         | IP Address | Operating System |
-|----------|------------------|------------|------------------|
-| Jump Box | Gateway          | 10.0.0.4   | Linux            |
-| Web-1    | Virtual Machine  | 10.0.0.9   | Linux            |
-| Web-2    | Virtual Machine  | 10.0.0.10  | Linux            |
-| Web-3    | Virtual Machine  | 10.0.0.8   | Linux            |
-| ELK      | Virtual Machine  | 10.1.0.5   | Linux            |
+| Name     | Function               | IP Address | Operating System |
+|----------|------------------------|------------|------------------|
+| Jump Box | Gateway                | 10.0.0.4   | Linux            |
+| Web-1    | Web Application DVWA   | 10.0.0.9   | Linux            |
+| Web-2    | Web Application DVWA   | 10.0.0.10  | Linux            |
+| Web-3    | Web Application DVWA   | 10.0.0.8   | Linux            |
+| ELK      | Monitoring Server      | 10.1.0.5   | Linux            |
 
 
 ### Access Policies
@@ -72,7 +78,7 @@ A summary of the access policies in place can be found in the table below.
 | Web-1     | No                  | 10.0.0.4/JumpBox     |
 | Web-2     | No                  | 10.0.0.4/JumpBox     |
 | Web-3     | No                  | 10.0.0.4/JumpBox     |
-| ELK-Server| No                  | Workstation publicIP |
+| ELK-Server| Yes                 | Workstation publicIP |
 
 ### Elk Configuration
 
@@ -132,7 +138,6 @@ The following screenshot displays the result of running `docker ps` after succes
 This ELK server is configured to monitor the following machines:
 - List the IP addresses of the machines you are monitoring
 
-- __ELK Server: 10.1.0.5__
 - __Web-1 : 10.0.0.9__
 - __Web-2 : 10.0.0.10__
 - __Web-3 : 10.0.0.8__
@@ -149,24 +154,30 @@ __Metricbeat__
 ![image](https://user-images.githubusercontent.com/95233170/161363679-1715b077-872d-4f50-bf30-978f968671d8.png)
 
 These Beats allow us to collect the following information from each machine:
-- TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
+- In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
+
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the __yml__ file into __/etc/ansible/ path.__
-- Update the __hosts__ file to include __host name, tasks, state...___   
-- Run the playbook, and navigate to __Kibana via ELK private IP__ to check that the installation worked as expected.
+- Copy the __playbook.yml__ file into __/etc/ansible/ directory.__
+- Update the __hosts__ file to include __host name and IP addresses___   
+- Run the playbook, and navigate to __Kibana via ELK public IP:5601__ to check that the installation worked as expected.
 
 TODO: Answer the following questions to fill in the blanks:
 - Which file is the playbook? Where do you copy it?
+
+__install_elk.yml__ 
+__/etc/ansible__
+
 - Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
 
-__
+__We update the 'hosts' file to run the playbook files on specific machines. To be able to specify which machine is to be installed, we create subsection within '[]' brackets and name it in the hosts file. Then, we specify the ELK server's private IP with the phyton interpreter snytax.__ 
 
 - Which URL do you navigate to in order to check that the ELK server is running?
 
- __http://"elk-serverIP":5601/app/kibana__
+ __http://"elk.vm.pub.ip":5601/app/kibana__
 
 As a *Bonus*, provide the specific commands the user will need to run to download the playbook, update the files, etc.
