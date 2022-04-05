@@ -156,6 +156,12 @@ __Metricbeat__
 These Beats allow us to collect the following information from each machine:
 - In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc.
 
+__Filebeat: As its name suggests, it collects the logs files from specified locations and presents in GUI format on certain platforms such as Kibana. For an example of filebeat, a deployed playbook file to collect data from ELK server and display on Kibana.__
+
+__Metricbeat: This beat gives us the performance usage in the VM or wherever it's installed. Then converts into GUI format such as showing CPU, RAM, memory usage.__
+
+__Auditbeat: This beat is to used auditing user or system activities on Linux server. As an example, it can provide security breaches.__
+
 
 
 ### Using the Playbook
@@ -166,7 +172,7 @@ SSH into the control node and follow the steps below:
 - Update the __hosts__ file to include __host name and IP addresses___   
 - Run the playbook, and navigate to __Kibana via ELK public IP:5601__ to check that the installation worked as expected.
 
-TODO: Answer the following questions to fill in the blanks:
+Answer the following questions to fill in the blanks:
 - Which file is the playbook? Where do you copy it?
 
 __install_elk.yml__ 
